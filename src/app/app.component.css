@@ -1,0 +1,61 @@
+.title{
+    text-align: center;
+    font-size: larger;
+    font-weight: 400;
+}
+
+.form-border {
+    border: 1px solid rgb(132, 129, 129);
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.form-border b {
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.form {
+    width: 80%;
+    margin: 0px auto;
+}
+
+
+.form-field {
+    width: 100%;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.field-title{
+    width: 10%;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.field-input input {
+    width: 85%;
+}
+
+.error {
+    position: absolute;
+    margin-left: 12%;
+}
+.err-text {
+    color: red;
+    font-size: x-small;
+    margin-right: 15px;
+    display: inline-block;
+}
+
+.submit-btn {
+    margin-top: 25px;
+    position: absolute;
+    width: 80px;
+    margin-bottom: 25px;
+}
+
+.form-status {
+    margin-top: 55px;
+}
