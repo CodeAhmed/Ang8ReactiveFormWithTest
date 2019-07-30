@@ -9,20 +9,20 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 })
 export class AppComponent implements OnInit {
 
-  contactForm: FormGroup;
+  // contactForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {}
+  // constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
-    this.contactForm = this.fb.group({
-      name: [null, [Validators.required]],
-      phone: [null, [Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/), Validators.minLength(10), Validators.maxLength(10)]],
-      address: this.fb.group({
-        street: [],
-        city: [],
-        zip: [null, [Validators.pattern(/^-?(0|[1-9]\d*)?$/), Validators.minLength(6), Validators.maxLength(6)]]
-      })
-    });
+    // this.contactForm = this.fb.group({
+    //   name: [null, [Validators.required]],
+    //   phone: [null, [Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/), Validators.minLength(10), Validators.maxLength(10)]],
+    //   address: this.fb.group({
+    //     street: [],
+    //     city: [],
+    //     zip: [null, [Validators.pattern(/^-?(0|[1-9]\d*)?$/), Validators.minLength(6), Validators.maxLength(6)]]
+    //   })
+    // });
   }
 
   /** create a form (contactForm) with following controls/groups and  validations
@@ -34,7 +34,15 @@ export class AppComponent implements OnInit {
    *      - zip: number of 6 digits
    */
 
-  // contactForm = new FormGroup({});
+   contactForm = new FormGroup({
+     name: new FormControl(null, [Validators.required]),
+     phone: new FormControl(null, [Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/), Validators.minLength(10), Validators.maxLength(10)]),
+     address: new FormGroup({
+       street: new FormControl(),
+       city: new FormControl(),
+       zip: new FormControl(null, [Validators.pattern(/^-?(0|[1-9]\d*)?$/), Validators.minLength(6), Validators.maxLength(6)])
+     })
+   }); 
 
 
   onSubmit() {
